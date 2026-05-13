@@ -21,7 +21,8 @@ export default function Home() {
           <img
             className="w-full h-full object-cover"
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuBa1wEwguVwSMEcIrMFk4NvufZvLOX2_0pCfT1T_NmhxCyInDQoidti3x8SRqtzzwXjeu9GdpwZQBFaPpLVKD1VYsI-vkoWVaCbjxyX3V712uSD9GBGxQNkbsPPhi9teFFcff_9Le5pKqTAZr9g9dO2mW5sE2I_GwdtaEGV1Yld72TlUnGWB3B1rATWbqgIth0c9q6Ho_aIAfI9bGGiB7xYD5j9Uzf1s4A6hb5p3atLqI6uPA13fiwmz3mUKHPVrFVqs-r0AQaRsnU"
-            alt="Neural network background"
+            alt=""
+            aria-hidden="true"
           />
         </div>
 
