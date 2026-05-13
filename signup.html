@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sign Up | Syntax Hire</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1.5rem;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "primary-fixed": "#dce1ff",
+                "on-secondary-fixed": "#00201d",
+                "on-secondary": "#003732",
+                "secondary": "#6bd8cb",
+                "on-surface": "#e3e1e9",
+                "primary-container": "#1e3a8a",
+                "surface-container-lowest": "#0d0e13",
+                "on-primary-fixed": "#00164e",
+                "outline": "#8f909d",
+                "inverse-surface": "#e3e1e9",
+                "on-error-container": "#ffdad6",
+                "tertiary-fixed": "#ffdbcb",
+                "surface-bright": "#38393f",
+                "tertiary-container": "#6e2c00",
+                "secondary-fixed": "#89f5e7",
+                "on-tertiary": "#552000",
+                "on-primary-container": "#90a8ff",
+                "error": "#ffb4ab",
+                "tertiary": "#ffb691",
+                "surface-tint": "#b6c4ff",
+                "surface-container-highest": "#34343a",
+                "surface-container": "#1e1f25",
+                "surface-dim": "#121318",
+                "primary-fixed-dim": "#b6c4ff",
+                "on-surface-variant": "#c5c5d3",
+                "secondary-container": "#29a195",
+                "on-secondary-fixed-variant": "#005049",
+                "secondary-fixed-dim": "#6bd8cb",
+                "inverse-primary": "#4059aa",
+                "background": "#121318",
+                "primary": "#b6c4ff",
+                "surface-container-high": "#292a2f",
+                "on-tertiary-fixed": "#341100",
+                "on-background": "#e3e1e9",
+                "on-tertiary-fixed-variant": "#773205",
+                "on-primary-fixed-variant": "#264191",
+                "tertiary-fixed-dim": "#ffb691",
+                "outline-variant": "#444651",
+                "surface-container-low": "#1a1b21",
+                "on-tertiary-container": "#f39461",
+                "on-error": "#690005",
+                "on-secondary-container": "#00302b",
+                "inverse-on-surface": "#2f3036",
+                "surface-variant": "#34343a",
+                "surface": "#121318",
+                "on-primary": "#05297a",
+                "error-container": "#93000a"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "section-gap": "4rem",
+                "margin-mobile": "1rem",
+                "gutter": "1.5rem",
+                "container-max": "1280px"
+        },
+        "fontFamily": {
+                "body-md": [
+                        "Inter"
+                ],
+                "page-heading-mobile": [
+                        "Inter"
+                ],
+                "page-heading": [
+                        "Inter"
+                ],
+                "headline-sm": [
+                        "Inter"
+                ],
+                "label-bold": [
+                        "Inter"
+                ],
+                "headline-md": [
+                        "Inter"
+                ],
+                "body-lg": [
+                        "Inter"
+                ]
+        },
+        "fontSize": {
+                "body-md": [
+                        "1rem",
+                        {
+                                "lineHeight": "1.5",
+                                "fontWeight": "400"
+                        }
+                ],
+                "page-heading-mobile": [
+                        "2.25rem",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "800"
+                        }
+                ],
+                "page-heading": [
+                        "3rem",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "800"
+                        }
+                ],
+                "headline-sm": [
+                        "1.5rem",
+                        {
+                                "lineHeight": "1.4",
+                                "fontWeight": "600"
+                        }
+                ],
+                "label-bold": [
+                        "0.875rem",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-md": [
+                        "2rem",
+                        {
+                                "lineHeight": "1.3",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-lg": [
+                        "1.125rem",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+</head>
+<body class="bg-background text-on-background min-h-screen font-body-md flex flex-col relative overflow-hidden">
+<!-- Hero Background Layer -->
+<div class="fixed inset-0 z-0">
+<img alt="" class="w-full h-full object-cover opacity-30 grayscale" data-alt="A cinematic, high-resolution wide shot of a futuristic data center illuminated by deep blue and purple ambient light. Shimmering digital particles and fiber optic cables suggest a sophisticated AI network infrastructure. The atmosphere is sleek, professional, and technologically advanced, perfectly matching a premium dark-mode dashboard aesthetic. Sharp focus on technological textures in a vast, intelligent digital space." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOd-KVVSwAa6h1JMHyN3J8Ib_bVB_aZcJHvs4jK1LHJ2wFy0L_Ay1yilpvhkOPCz3Cscy2CDeUX0e_5t1ET96UEu6ArX8zbpyMfiXf0kO-VmJc_cKR36Yv39iqIM1Gic-h0Ud7J3x7X1u3wuUoXNyxrNGpIVeAZKxe3YjTnlwDfbkvNc5ZtfPcpZVdqp2lG-PMriF6etrDexoBQxEyx_VPRfvpG4osCaj97cdfIDI-kxXwG32VFcHaEI-N2aQWIRYsDKtb2V3FQNI"/>
+<div class="absolute inset-0 bg-gradient-to-br from-background via-background/80 to-transparent"></div>
+</div>
+<!-- Navigation (Shell Suppressed per Task Requirements for Task-Focused Page) -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-lg border-b border-white/10 h-16 shadow-lg flex justify-between items-center px-margin-mobile md:px-gutter max-w-container-max mx-auto left-1/2 -translate-x-1/2">
+<div class="text-headline-sm font-headline-sm font-extrabold text-primary-fixed tracking-tight">Syntax Hire</div>
+<div class="flex items-center gap-6">
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" href="#">Features</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" href="#">Solutions</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" href="#">Pricing</a>
+<button class="active:scale-95 transition-transform bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-label-bold text-label-bold hover:opacity-80 transition-all duration-200">Login</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex items-center justify-center pt-24 pb-12 px-margin-mobile relative z-10">
+<div class="w-full max-w-[480px] glass-card p-8 md:p-12 shadow-lg">
+<!-- Header -->
+<header class="text-center mb-10">
+<h1 class="font-page-heading text-page-heading-mobile md:text-headline-md mb-2 text-primary-fixed">Join Syntax Hire</h1>
+<p class="text-on-surface-variant font-body-md text-body-md">Start optimizing your recruitment workflow with precision AI analysis.</p>
+</header>
+<!-- Sign Up Form -->
+<form class="space-y-6">
+<!-- Full Name -->
+<div class="space-y-2">
+<label class="block font-label-bold text-label-bold text-on-surface-variant uppercase tracking-widest ml-1">Full Name</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary/50 group-focus-within:text-primary transition-colors">person</span>
+<input class="w-full bg-surface-container-low border-b-2 border-outline/20 focus:border-primary focus:ring-0 text-on-surface pl-12 pr-4 py-4 rounded-t-lg transition-all outline-none" placeholder="Jane Doe" type="text"/>
+</div>
+</div>
+<!-- Email Address -->
+<div class="space-y-2">
+<label class="block font-label-bold text-label-bold text-on-surface-variant uppercase tracking-widest ml-1">Email Address</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary/50 group-focus-within:text-primary transition-colors">mail</span>
+<input class="w-full bg-surface-container-low border-b-2 border-outline/20 focus:border-primary focus:ring-0 text-on-surface pl-12 pr-4 py-4 rounded-t-lg transition-all outline-none" placeholder="jane@syntaxhire.ai" type="email"/>
+</div>
+</div>
+<!-- Password -->
+<div class="space-y-2">
+<label class="block font-label-bold text-label-bold text-on-surface-variant uppercase tracking-widest ml-1">Password</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary/50 group-focus-within:text-primary transition-colors">lock</span>
+<input class="w-full bg-surface-container-low border-b-2 border-outline/20 focus:border-primary focus:ring-0 text-on-surface pl-12 pr-12 py-4 rounded-t-lg transition-all outline-none" placeholder="••••••••" type="password"/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary" type="button">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</div>
+</div>
+<!-- Primary Action -->
+<button class="w-full py-4 bg-primary-container text-on-primary-container rounded-xl font-headline-sm text-headline-sm hover:scale-[1.02] hover:brightness-110 active:scale-95 transition-all shadow-lg mt-4" type="submit">
+                    Create Account
+                </button>
+</form>
+<!-- Secondary Actions -->
+<div class="mt-8 text-center space-y-4">
+<p class="text-on-surface-variant font-body-md text-body-md">
+                    Already have an account? 
+                    <a class="text-primary font-label-bold hover:underline" href="#">Log in to existing account</a>
+</p>
+<div class="pt-6 border-t border-white/5 flex flex-wrap justify-center gap-x-4 gap-y-2 text-xs text-on-surface-variant/60">
+<a class="hover:text-secondary transition-colors" href="#">Privacy Policy</a>
+<span class="select-none">•</span>
+<a class="hover:text-secondary transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap bg-surface-container-lowest border-t border-white/5 relative z-10">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-gutter max-w-container-max mx-auto gap-4">
+<div class="text-headline-sm font-headline-sm font-bold text-primary">Syntax Hire</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Contact Support</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">API Documentation</a>
+</div>
+<div class="font-body-md text-body-md text-on-surface-variant">© 2024 Syntax Hire AI. Precision in every hire.</div>
+</div>
+</footer>
+</body></html>

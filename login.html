@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login | Syntax Hire</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed": "#dce1ff",
+                    "on-secondary-fixed": "#00201d",
+                    "on-secondary": "#003732",
+                    "secondary": "#6bd8cb",
+                    "on-surface": "#e3e1e9",
+                    "primary-container": "#1e3a8a",
+                    "surface-container-lowest": "#0d0e13",
+                    "on-primary-fixed": "#00164e",
+                    "outline": "#8f909d",
+                    "inverse-surface": "#e3e1e9",
+                    "on-error-container": "#ffdad6",
+                    "tertiary-fixed": "#ffdbcb",
+                    "surface-bright": "#38393f",
+                    "tertiary-container": "#6e2c00",
+                    "secondary-fixed": "#89f5e7",
+                    "on-tertiary": "#552000",
+                    "on-primary-container": "#90a8ff",
+                    "error": "#ffb4ab",
+                    "tertiary": "#ffb691",
+                    "surface-tint": "#b6c4ff",
+                    "surface-container-highest": "#34343a",
+                    "surface-container": "#1e1f25",
+                    "surface-dim": "#121318",
+                    "primary-fixed-dim": "#b6c4ff",
+                    "on-surface-variant": "#c5c5d3",
+                    "secondary-container": "#29a195",
+                    "on-secondary-fixed-variant": "#005049",
+                    "secondary-fixed-dim": "#6bd8cb",
+                    "inverse-primary": "#4059aa",
+                    "background": "#121318",
+                    "primary": "#b6c4ff",
+                    "surface-container-high": "#292a2f",
+                    "on-tertiary-fixed": "#341100",
+                    "on-background": "#e3e1e9",
+                    "on-tertiary-fixed-variant": "#773205",
+                    "on-primary-fixed-variant": "#264191",
+                    "tertiary-fixed-dim": "#ffb691",
+                    "outline-variant": "#444651",
+                    "surface-container-low": "#1a1b21",
+                    "on-tertiary-container": "#f39461",
+                    "on-error": "#690005",
+                    "on-secondary-container": "#00302b",
+                    "inverse-on-surface": "#2f3036",
+                    "surface-variant": "#34343a",
+                    "surface": "#121318",
+                    "on-primary": "#05297a",
+                    "error-container": "#93000a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-gap": "4rem",
+                    "margin-mobile": "1rem",
+                    "gutter": "1.5rem",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "page-heading-mobile": ["Inter"],
+                    "page-heading": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "label-bold": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "body-md": ["1rem", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "page-heading-mobile": ["2.25rem", {"lineHeight": "1.2", "fontWeight": "800"}],
+                    "page-heading": ["3rem", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-sm": ["1.5rem", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "label-bold": ["0.875rem", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-md": ["2rem", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "body-lg": ["1.125rem", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1.5rem;
+        }
+        .primary-button {
+            background-color: #1E3A8A;
+            transition: transform 0.2s ease, filter 0.2s ease;
+        }
+        .primary-button:hover {
+            transform: scale(1.05);
+            filter: brightness(1.2);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md">
+<!-- Background Layer with Image -->
+<div class="fixed inset-0 z-[-1] overflow-hidden">
+<img alt="Professional Background" class="w-full h-full object-cover opacity-30 grayscale contrast-125" data-alt="A high-resolution wide-angle view of a futuristic dark office space with soft ambient blue lighting. The atmosphere is professional and technologically advanced, featuring sleek metallic surfaces and subtle digital data streams in the distance. The lighting is low-key with deep shadows and soft indigo highlights, creating a premium glassmorphic depth effect for the UI layers above it." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW_29h0JP3WrtuQn8415Csy0f5PWyMiRg2pPCiAhznhG4ADGfzWLS3tIaz2qHgK6Jp2EMXf01vb0AdIaKSOzEUkk5ajH5g7TNvAeRbAWAxOy4tEP3CwtdJRNiOzw_df19ZugHfUYXWLCeBJ5HomW6ZUYcgdZGginvtFqsFGrVyINNZOhX06tC7HSoELAYgfv2kpGcIwExcww3E_U_n4qZJvp_Jd_z6iIj0qq1SXKQuV2QgV9f-vlPHw5vWJ8uSkv7jh_nHKzlBqL4"/>
+<div class="absolute inset-0 bg-gradient-to-br from-background via-surface-dim/80 to-background"></div>
+</div>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex items-center justify-center px-margin-mobile">
+<div class="glass-card w-full max-w-[440px] p-8 md:p-10 shadow-lg flex flex-col gap-8">
+<!-- Brand Identity -->
+<div class="flex flex-col items-center text-center gap-2">
+<div class="w-16 h-16 bg-primary-container rounded-xl flex items-center justify-center mb-2">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="terminal">terminal</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-on-surface tracking-tight">Syntax Hire</h1>
+<p class="text-on-surface-variant font-body-md">Precision in every hire.</p>
+</div>
+<!-- Login Form -->
+<form class="flex flex-col gap-6">
+<!-- Email Field -->
+<div class="flex flex-col gap-2">
+<label class="font-label-bold text-label-bold text-on-surface-variant uppercase" for="email">Email Address</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-xl transition-colors group-focus-within:text-primary" data-icon="mail">mail</span>
+<input class="w-full bg-surface-container-low/50 border-b-2 border-outline-variant focus:border-primary focus:ring-0 text-on-surface py-3 pl-12 pr-4 transition-all rounded-t-lg outline-none" id="email" placeholder="name@company.com" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<label class="font-label-bold text-label-bold text-on-surface-variant uppercase" for="password">Password</label>
+<a class="text-primary text-sm hover:underline transition-all" href="#">Forgot Password?</a>
+</div>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-xl transition-colors group-focus-within:text-primary" data-icon="lock">lock</span>
+<input class="w-full bg-surface-container-low/50 border-b-2 border-outline-variant focus:border-primary focus:ring-0 text-on-surface py-3 pl-12 pr-12 transition-all rounded-t-lg outline-none" id="password" placeholder="••••••••" type="password"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface" type="button">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<!-- Action Button -->
+<button class="primary-button w-full py-4 rounded-xl text-primary-fixed font-bold text-lg shadow-md mt-2 flex items-center justify-center gap-2" type="submit">
+                    Login
+                    <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</form>
+<!-- Social Login / Divider -->
+<div class="flex flex-col gap-6">
+<div class="flex items-center gap-4">
+<div class="h-px flex-grow bg-white/10"></div>
+<span class="text-on-surface-variant text-sm font-label-bold uppercase">Or continue with</span>
+<div class="h-px flex-grow bg-white/10"></div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-3 bg-surface-container-high/40 hover:bg-surface-container-high/60 border border-white/10 py-3 rounded-xl transition-all">
+<img alt="Google" class="w-5 h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYiG5eQkmSKm3sgNz6L9-yVGXJcbukfwrXYxNHTHErrr8Cqy1gsxJZRrb0pt5HRD3ptXAHl0VmSMQN3LRO0kHgvuWV-kisJwILFa3yeoqbKffdNtNO5f-mW9hiyFjvLYqPNOeYwk1-DL5RoStIcuvgTNFcv5Un6NqkLnOYH6flGU1nbAEOln95VPoTBkT83iBfMbkyDIAuV5yDx2SC5jPTL70ese10qdYKZGcAElr5no3Ytr8zuGgeVDIJVt0WTSlwtZuY6Kc60-s"/>
+<span class="text-on-surface text-sm font-label-bold">Google</span>
+</button>
+<button class="flex items-center justify-center gap-3 bg-surface-container-high/40 hover:bg-surface-container-high/60 border border-white/10 py-3 rounded-xl transition-all">
+<span class="material-symbols-outlined text-xl" data-icon="work">work</span>
+<span class="text-on-surface text-sm font-label-bold">SSO</span>
+</button>
+</div>
+</div>
+<!-- Footer Link -->
+<div class="text-center">
+<p class="text-on-surface-variant font-body-md">
+                    Don't have an account? 
+                    <a class="text-primary font-bold hover:text-secondary transition-colors ml-1" href="/signup">Sign up for a new account</a>
+</p>
+</div>
+</div>
+</main>
+<!-- Footer Content -->
+<footer class="w-full py-8 border-t border-white/5 bg-surface-container-lowest/50 backdrop-blur-md">
+<div class="max-w-container-max mx-auto px-margin-mobile flex flex-col md:flex-row justify-between items-center gap-4">
+<div class="flex items-center gap-2">
+<span class="text-primary font-bold text-lg">Syntax Hire</span>
+<span class="text-on-surface-variant text-sm">© 2024 Syntax Hire AI. Precision in every hire.</span>
+</div>
+<div class="flex gap-6">
+<a class="text-on-surface-variant hover:text-secondary transition-colors text-sm" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors text-sm" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors text-sm" href="#">Contact Support</a>
+</div>
+</div>
+</footer>
+</body></html>
