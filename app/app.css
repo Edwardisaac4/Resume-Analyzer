@@ -1,152 +1,418 @@
-@import url("https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@theme {
-  --font-sans: "Mona Sans", ui-sans-serif, system-ui, sans-serif,
-  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --color-dark-200: #475467;
-  --color-light-blue-100: #c1d3f81a;
-  --color-light-blue-200: #a7bff14d;
+/* ──────────────────────────────────────────────────────────
+   RAW CSS CUSTOM PROPERTIES — the single source of truth
+   ────────────────────────────────────────────────────────── */
+:root {
+  /* Primary */
+  --sh-primary: #b6c4ff;
+  --sh-primary-container: #1e3a8a;
+  --sh-primary-fixed: #dce1ff;
+  --sh-primary-fixed-dim: #b6c4ff;
+  --sh-on-primary: #05297a;
+  --sh-on-primary-container: #90a8ff;
+  --sh-on-primary-fixed: #00164e;
+  --sh-on-primary-fixed-variant: #264191;
+  --sh-inverse-primary: #4059aa;
 
-  --color-badge-green: #d5faf1;
-  --color-badge-red: #f9e3e2;
-  --color-badge-yellow: #fceed8;
+  /* Secondary */
+  --sh-secondary: #6bd8cb;
+  --sh-secondary-container: #29a195;
+  --sh-secondary-fixed: #89f5e7;
+  --sh-secondary-fixed-dim: #6bd8cb;
+  --sh-on-secondary: #003732;
+  --sh-on-secondary-container: #00302b;
+  --sh-on-secondary-fixed: #00201d;
+  --sh-on-secondary-fixed-variant: #005049;
 
-  --color-badge-green-text: #254d4a;
-  --color-badge-red-text: #752522;
-  --color-badge-yellow-text: #73321b;
+  /* Tertiary */
+  --sh-tertiary: #ffb691;
+  --sh-tertiary-container: #6e2c00;
+  --sh-tertiary-fixed: #ffdbcb;
+  --sh-tertiary-fixed-dim: #ffb691;
+  --sh-on-tertiary: #552000;
+  --sh-on-tertiary-container: #f39461;
+  --sh-on-tertiary-fixed: #341100;
+  --sh-on-tertiary-fixed-variant: #773205;
+
+  /* Surface */
+  --sh-surface: #121318;
+  --sh-surface-dim: #121318;
+  --sh-surface-bright: #38393f;
+  --sh-surface-variant: #34343a;
+  --sh-surface-tint: #b6c4ff;
+  --sh-surface-container: #1e1f25;
+  --sh-surface-container-low: #1a1b21;
+  --sh-surface-container-high: #292a2f;
+  --sh-surface-container-highest: #34343a;
+  --sh-surface-container-lowest: #0d0e13;
+  --sh-on-surface: #e3e1e9;
+  --sh-on-surface-variant: #c5c5d3;
+  --sh-inverse-surface: #e3e1e9;
+  --sh-inverse-on-surface: #2f3036;
+  --sh-background: #121318;
+  --sh-on-background: #e3e1e9;
+
+  /* Error */
+  --sh-error: #ffb4ab;
+  --sh-error-container: #93000a;
+  --sh-on-error: #690005;
+  --sh-on-error-container: #ffdad6;
+
+  /* Outline */
+  --sh-outline: #8f909d;
+  --sh-outline-variant: #444651;
 }
 
+/* ── Tailwind @theme – registers tokens so utilities like
+      bg-primary, text-on-surface, etc. are generated ── */
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+  --color-primary: #b6c4ff;
+  --color-primary-container: #1e3a8a;
+  --color-primary-fixed: #dce1ff;
+  --color-primary-fixed-dim: #b6c4ff;
+  --color-on-primary: #05297a;
+  --color-on-primary-container: #90a8ff;
+  --color-on-primary-fixed: #00164e;
+  --color-inverse-primary: #4059aa;
+
+  --color-secondary: #6bd8cb;
+  --color-secondary-container: #29a195;
+  --color-on-secondary: #003732;
+  --color-on-secondary-container: #00302b;
+
+  --color-tertiary: #ffb691;
+  --color-tertiary-container: #6e2c00;
+  --color-on-tertiary: #552000;
+  --color-on-tertiary-container: #f39461;
+
+  --color-surface: #121318;
+  --color-surface-dim: #121318;
+  --color-surface-bright: #38393f;
+  --color-surface-variant: #34343a;
+  --color-surface-tint: #b6c4ff;
+  --color-surface-container: #1e1f25;
+  --color-surface-container-low: #1a1b21;
+  --color-surface-container-high: #292a2f;
+  --color-surface-container-highest: #34343a;
+  --color-surface-container-lowest: #0d0e13;
+  --color-on-surface: #e3e1e9;
+  --color-on-surface-variant: #c5c5d3;
+  --color-inverse-surface: #e3e1e9;
+
+  --color-error: #ffb4ab;
+  --color-error-container: #93000a;
+  --color-on-error: #690005;
+
+  --color-outline: #8f909d;
+  --color-outline-variant: #444651;
+}
+
+/* ──────────────────────────────────────────────────────────
+   BASE STYLES — use direct CSS, NOT @apply, for reliability
+   ────────────────────────────────────────────────────────── */
 html,
 body {
-  @apply bg-white;
+  background-color: var(--sh-background);
+  color: var(--sh-on-background);
+  overflow-x: hidden;
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
 main {
-  @apply min-h-screen pt-10;
+  min-height: 100vh;
 }
+
 h1 {
-  @apply max-sm:text-[3rem] text-6xl  text-gradient leading-tight xl:tracking-[-2px] font-semibold;
+  color: var(--sh-on-surface);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
 }
 
 h2 {
-  @apply max-sm:text-xl text-3xl text-dark-200;
+  color: var(--sh-on-surface);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+h3 {
+  color: var(--sh-on-surface);
+  font-weight: 600;
+  line-height: 1.4;
 }
 
 label {
-  @apply text-dark-200;
+  color: var(--sh-on-surface-variant);
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
+
 input {
-  @apply w-full p-4 inset-shadow rounded-2xl focus:outline-none bg-white;
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+  background-color: rgba(26, 27, 33, 0.5);
+  border: none;
+  border-bottom: 2px solid var(--sh-outline-variant);
+  color: var(--sh-on-surface);
+  padding: 0.75rem 1rem;
+  transition: all 0.2s;
+  border-radius: 0.5rem 0.5rem 0 0;
+  outline: none;
+}
+input:focus {
+  border-bottom-color: var(--sh-primary);
 }
 
 textarea {
-  @apply w-full p-4 inset-shadow rounded-2xl focus:outline-none bg-white;
+  width: 100%;
+  background-color: rgba(26, 27, 33, 0.5);
+  border: none;
+  border-bottom: 2px solid var(--sh-outline-variant);
+  color: var(--sh-on-surface);
+  padding: 1rem;
+  transition: all 0.2s;
+  border-radius: 0.5rem 0.5rem 0 0;
+  outline: none;
+}
+textarea:focus {
+  border-bottom-color: var(--sh-primary);
 }
 
 form {
-  @apply flex flex-col items-start gap-8 w-full;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  width: 100%;
 }
 
-@layer components {
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#AB8C95] via-[#000000] to-[#8E97C5];
-  }
-  .gradient-border {
-    @apply bg-gradient-to-b from-light-blue-100 to-light-blue-200 p-4 rounded-2xl;
-  }
-  .primary-button {
-    @apply primary-gradient text-white rounded-full px-4 py-2 cursor-pointer w-full;
-  }
-  .resume-nav {
-    @apply flex flex-row justify-between items-center p-4 border-b border-gray-200;
-  }
-  .resume-summary {
-    @apply flex flex-row items-center justify-center p-4 gap-4;
-    .category {
-      @apply flex flex-row gap-2 items-center bg-gray-50 rounded-2xl p-4 w-full justify-between;
-    }
-  }
-  .back-button {
-    @apply flex flex-row items-center gap-2 border border-gray-200 rounded-lg p-2 shadow-sm;
-  }
-  .auth-button {
-    @apply primary-gradient rounded-full py-4 px-8 cursor-pointer w-[600px] max-md:w-full text-3xl font-semibold text-white;
-  }
-  .main-section {
-    @apply flex flex-col items-center gap-8 pt-12 max-sm:mx-2 mx-15 pb-5;
-  }
-  .page-heading {
-    @apply flex flex-col items-center gap-8 max-w-4xl text-center max-sm:gap-4;
-  }
-  .resumes-section {
-    @apply flex flex-wrap max-md:flex-col max-md:gap-4 gap-6 items-start max-md:items-center w-full max-w-[1850px] justify-evenly;
-  }
+/* ──────────────────────────────────────────────────────────
+   COMPONENT CLASSES — all using direct CSS for reliability
+   ────────────────────────────────────────────────────────── */
 
-  .resume-card {
-    @apply flex flex-col gap-8 h-[560px] w-[350px] lg:w-[430px] xl:w-[490px] bg-white rounded-2xl p-4;
-  }
-
-  .resume-card-header {
-    @apply flex flex-row gap-2 justify-between min-h-[110px] max-sm:flex-col items-center max-md:justify-center max-md:items-center;
-  }
-
-  .feedback-section {
-    @apply flex flex-col gap-8 w-1/2 px-8 max-lg:w-full py-6;
-  }
-
-  .navbar {
-    @apply flex flex-row justify-between items-center bg-white rounded-full p-4 w-full px-10 max-w-[1200px] mx-auto;
-  }
-
-  .score-badge {
-    @apply flex flex-row items-center justify-center py-1 px-2 gap-4 rounded-[96px];
-  }
-
-  .form-div {
-    @apply flex flex-col gap-2 w-full items-start;
-  }
-
-  .uplader-drag-area {
-    @apply relative p-8 text-center transition-all duration-700 cursor-pointer bg-white rounded-2xl min-h-[208px];
-  }
-  .uploader-selected-file {
-    @apply flex items-center justify-between p-3 bg-gray-50 rounded-2xl;
-  }
+/* ── Glass card (glassmorphism) ── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.5rem;
 }
 
-@utility bg-gradient {
-  background: linear-gradient(to bottom, #f0f4ff 60%, #fa7185cc);
+/* ── Hero gradient background ── */
+.hero-gradient {
+  background: radial-gradient(circle at top right, rgba(30, 58, 138, 0.3) 0%, transparent 60%),
+              radial-gradient(circle at bottom left, rgba(182, 196, 255, 0.1) 0%, transparent 50%);
 }
 
-@utility text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#AB8C95] via-[#000000] to-[#8E97C5];
+/* ── Text glow ── */
+.text-glow {
+  text-shadow: 0 0 20px rgba(182, 196, 255, 0.3);
 }
 
-@utility gradient-hover {
-  @apply bg-gradient-to-b from-light-blue-100 to-light-blue-200;
+/* ── Primary button ── */
+.primary-button {
+  background-color: var(--sh-primary-container);
+  color: var(--sh-on-primary-container);
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+.primary-button:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+.primary-button:active {
+  transform: scale(0.95);
 }
 
-@utility primary-gradient {
-  background: linear-gradient(to bottom, #8e98ff, #606beb);
-  box-shadow: 0px 74px 21px 0px #6678ef00;
+/* ── Auth button ── */
+.auth-button {
+  background-color: var(--sh-primary-container);
+  color: var(--sh-on-primary-container);
+  border-radius: 0.75rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1.125rem;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+.auth-button:hover {
+  transform: scale(1.02);
+  filter: brightness(1.1);
 }
 
-@utility primary-gradient-hover {
-  background: linear-gradient(to bottom, #717dff, #4957eb);
+/* ── Navbar ── */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+  background-color: rgba(18, 19, 24, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+}
+.navbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  height: 4rem;
 }
 
-@utility inset-shadow {
-  box-shadow: inset 0 0 12px 0 rgba(36, 99, 235, 0.2);
-  backdrop-filter: blur(10px);
+/* ── Layout sections ── */
+.main-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 6rem 1rem 2rem;
+}
+.page-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 56rem;
+  text-align: center;
 }
 
+/* ── Form helpers ── */
+.form-div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  align-items: flex-start;
+}
+
+/* ── Resume cards ── */
+.resumes-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1280px;
+  justify-content: space-evenly;
+}
+.resume-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 350px;
+  padding: 1.5rem;
+}
+.resume-card-header {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  justify-content: space-between;
+  min-height: 110px;
+  align-items: center;
+}
+
+/* ── Feedback section ── */
+.feedback-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 50%;
+  padding: 1.5rem 2rem;
+}
+
+/* ── Score badge ── */
+.score-badge {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.5rem;
+  gap: 1rem;
+  border-radius: 9999px;
+}
+
+/* ── Resume nav ── */
+.resume-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid var(--sh-outline-variant);
+}
+.resume-summary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+/* ── Back button ── */
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--sh-outline-variant);
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  color: var(--sh-on-surface);
+}
+
+/* ── File uploader ── */
+.uplader-drag-area {
+  position: relative;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.7s;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1.5rem;
+  min-height: 208px;
+}
+.uploader-selected-file {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem;
+  background-color: rgba(41, 42, 47, 0.4);
+  border-radius: 1rem;
+}
+
+/* ──────────────────────────────────────────────────────────
+   ANIMATIONS
+   ────────────────────────────────────────────────────────── */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
 }

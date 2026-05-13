@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "primary-fixed": "#dce1ff",
+                "on-secondary-fixed": "#00201d",
+                "on-secondary": "#003732",
+                "secondary": "#6bd8cb",
+                "on-surface": "#e3e1e9",
+                "primary-container": "#1e3a8a",
+                "surface-container-lowest": "#0d0e13",
+                "on-primary-fixed": "#00164e",
+                "outline": "#8f909d",
+                "inverse-surface": "#e3e1e9",
+                "on-error-container": "#ffdad6",
+                "tertiary-fixed": "#ffdbcb",
+                "surface-bright": "#38393f",
+                "tertiary-container": "#6e2c00",
+                "secondary-fixed": "#89f5e7",
+                "on-tertiary": "#552000",
+                "on-primary-container": "#90a8ff",
+                "error": "#ffb4ab",
+                "tertiary": "#ffb691",
+                "surface-tint": "#b6c4ff",
+                "surface-container-highest": "#34343a",
+                "surface-container": "#1e1f25",
+                "surface-dim": "#121318",
+                "primary-fixed-dim": "#b6c4ff",
+                "on-surface-variant": "#c5c5d3",
+                "secondary-container": "#29a195",
+                "on-secondary-fixed-variant": "#005049",
+                "secondary-fixed-dim": "#6bd8cb",
+                "inverse-primary": "#4059aa",
+                "background": "#121318",
+                "primary": "#b6c4ff",
+                "surface-container-high": "#292a2f",
+                "on-tertiary-fixed": "#341100",
+                "on-background": "#e3e1e9",
+                "on-tertiary-fixed-variant": "#773205",
+                "on-primary-fixed-variant": "#264191",
+                "tertiary-fixed-dim": "#ffb691",
+                "outline-variant": "#444651",
+                "surface-container-low": "#1a1b21",
+                "on-tertiary-container": "#f39461",
+                "on-error": "#690005",
+                "on-secondary-container": "#00302b",
+                "inverse-on-surface": "#2f3036",
+                "surface-variant": "#34343a",
+                "surface": "#121318",
+                "on-primary": "#05297a",
+                "error-container": "#93000a"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "section-gap": "4rem",
+                "margin-mobile": "1rem",
+                "gutter": "1.5rem",
+                "container-max": "1280px"
+            },
+            "fontFamily": {
+                "body-md": ["Inter"],
+                "page-heading-mobile": ["Inter"],
+                "page-heading": ["Inter"],
+                "headline-sm": ["Inter"],
+                "label-bold": ["Inter"],
+                "headline-md": ["Inter"],
+                "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                "body-md": ["1rem", {"lineHeight": "1.5", "fontWeight": "400"}],
+                "page-heading-mobile": ["2.25rem", {"lineHeight": "1.2", "fontWeight": "800"}],
+                "page-heading": ["3rem", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                "headline-sm": ["1.5rem", {"lineHeight": "1.4", "fontWeight": "600"}],
+                "label-bold": ["0.875rem", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                "headline-md": ["2rem", {"lineHeight": "1.3", "fontWeight": "700"}],
+                "body-lg": ["1.125rem", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #121318;
+            color: #e3e1e9;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1.5rem;
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at top right, rgba(30, 58, 138, 0.3) 0%, transparent 60%),
+                        radial-gradient(circle at bottom left, rgba(182, 196, 255, 0.1) 0%, transparent 50%);
+        }
+        .text-glow {
+            text-shadow: 0 0 20px rgba(182, 196, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-lg border-b border-white/10 shadow-lg">
+<div class="flex justify-between items-center px-margin-mobile md:px-gutter max-w-container-max mx-auto h-16">
+<div class="text-headline-sm font-headline-sm font-extrabold text-primary-fixed dark:text-primary-fixed tracking-tight active:scale-95 transition-transform cursor-pointer">
+                Syntax Hire
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-body-md text-body-md transition-all duration-200" href="#">Features</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md transition-all duration-200" href="#">Solutions</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md transition-all duration-200" href="#">Pricing</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-on-surface-variant hover:opacity-80 transition-all duration-200 font-body-md text-body-md">Login</button>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-bold text-label-bold active:scale-95 transition-transform">Sign Up</button>
+</div>
+</div>
+</nav>
+<main class="pt-16">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center justify-center hero-gradient px-margin-mobile">
+<div class="absolute inset-0 z-0 opacity-20">
+<img class="w-full h-full object-cover" data-alt="A cinematic, high-resolution view of a digital neural network pulsating with light across a deep space background. Glowing blue and white data nodes connect with thin, elegant lines, creating a sense of vast intelligence and connectivity. The lighting is moody and atmospheric, emphasizing the sophisticated AI core of the brand. This artistic representation captures the essence of high-tech precision and the future of career technology in a dark mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBa1wEwguVwSMEcIrMFk4NvufZvLOX2_0pCfT1T_NmhxCyInDQoidti3x8SRqtzzwXjeu9GdpwZQBFaPpLVKD1VYsI-vkoWVaCbjxyX3V712uSD9GBGxQNkbsPPhi9teFFcff_9Le5pKqTAZr9g9dO2mW5sE2I_GwdtaEGV1Yld72TlUnGWB3B1rATWbqgIth0c9q6Ho_aIAfI9bGGiB7xYD5j9Uzf1s4A6hb5p3atLqI6uPA13fiwmz3mUKHPVrFVqs-r0AQaRsnU"/>
+</div>
+<div class="relative z-10 max-w-4xl text-center flex flex-col items-center">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 glass-card mb-8">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span class="text-label-bold font-label-bold uppercase tracking-widest text-primary">AI-Powered Career Growth</span>
+</div>
+<h1 class="font-page-heading text-page-heading-mobile md:text-page-heading text-on-surface mb-6 leading-tight text-glow">
+                    Land Your Dream Job with AI-Powered Resume Feedback
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-2xl mx-auto">
+                    Optimize your professional profile with the world's most precise resume analyzer. Get instant ATS scores, targeted improvement tips, and beat the bots.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-xl font-label-bold text-label-bold text-lg hover:scale-105 transition-transform shadow-lg shadow-primary/20">
+                        Analyze My Resume
+                    </button>
+<button class="glass-card px-8 py-4 text-on-surface font-label-bold text-label-bold text-lg hover:bg-white/10 transition-colors">
+                        View Demo
+                    </button>
+</div>
+<!-- Hero Stats -->
+<div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 w-full max-w-3xl">
+<div class="text-center">
+<div class="text-headline-md font-headline-md text-primary">94%</div>
+<div class="text-label-bold font-label-bold text-on-surface-variant opacity-70">ATS Match Rate</div>
+</div>
+<div class="text-center">
+<div class="text-headline-md font-headline-md text-primary">15k+</div>
+<div class="text-label-bold font-label-bold text-on-surface-variant opacity-70">Jobs Landed</div>
+</div>
+<div class="text-center">
+<div class="text-headline-md font-headline-md text-primary">2.4s</div>
+<div class="text-label-bold font-label-bold text-on-surface-variant opacity-70">Avg. Analysis</div>
+</div>
+<div class="text-center">
+<div class="text-headline-md font-headline-md text-primary">180+</div>
+<div class="text-label-bold font-label-bold text-on-surface-variant opacity-70">Role Templates</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Features Section (Bento Grid) -->
+<section class="py-section-gap px-margin-mobile md:px-gutter max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-4">Precision Intelligence for Your Career</h2>
+<p class="text-on-surface-variant max-w-xl mx-auto">Our proprietary AI engines analyze every syllable of your resume against real-world recruitment algorithms.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[600px]">
+<!-- Main Feature -->
+<div class="md:col-span-7 glass-card p-10 flex flex-col justify-between group">
+<div>
+<div class="w-12 h-12 bg-primary-container rounded-lg flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">speed</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-4">Instant ATS Scoring</h3>
+<p class="text-on-surface-variant text-body-md mb-8">Get a definitive score of how well your resume performs against Applicant Tracking Systems. We reveal exactly what recruiters see before you even hit send.</p>
+<div class="space-y-4">
+<div class="flex justify-between items-end mb-1">
+<span class="text-label-bold font-label-bold text-on-surface">Overall Match Score</span>
+<span class="text-primary font-bold">88/100</span>
+</div>
+<div class="w-full h-3 bg-white/5 rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-secondary to-primary" style="width: 88%"></div>
+</div>
+</div>
+</div>
+<div class="mt-8 opacity-40 group-hover:opacity-100 transition-opacity">
+<span class="text-primary font-label-bold flex items-center gap-2">Learn about our scoring algorithm <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+</div>
+</div>
+<!-- Side Features -->
+<div class="md:col-span-5 grid grid-rows-2 gap-6">
+<div class="glass-card p-8 flex flex-col justify-center">
+<div class="w-10 h-10 bg-secondary-container/20 rounded-lg flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Improvement Tips</h3>
+<p class="text-on-surface-variant text-body-md">Actionable, line-by-line feedback to strengthen your bullet points and vocabulary.</p>
+</div>
+<div class="glass-card p-8 flex flex-col justify-center">
+<div class="w-10 h-10 bg-tertiary-container/20 rounded-lg flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">target</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Role-Specific Feedback</h3>
+<p class="text-on-surface-variant text-body-md">Tailor your profile for specific industries, from Big Tech to Boutique Agencies.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Dynamic Visualization Section -->
+<section class="py-section-gap bg-surface-container-low overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter grid md:grid-cols-2 gap-16 items-center">
+<div class="order-2 md:order-1">
+<div class="glass-card p-1 relative overflow-hidden">
+<img class="rounded-xl w-full" data-alt="A sleek, high-end dashboard interface showing complex data visualizations, charts, and resume analysis metrics. The UI features frosted glass elements, vibrant teal and indigo gradients, and crisp white typography on a dark charcoal background. Multiple layers of information are presented in a clean, organized bento-style layout that suggests powerful AI processing and professional insight. The lighting is balanced with a soft glow emanating from the primary data points." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfPFXh8NXUYxLg90-qKSQw02PPR4lzBf_97k0Gskv1CxaKnDvhhHcNyn1EGm-RA4RJggtsNio3YnA-K6OBbEGzZBllyXxszxqQrtsptTsdBjhfEJ2Esew9xLRY8Bxe54u4XXDfnccTXQga6vmWIV2FUQat4K-LMbu_SNIPpMSYc-vrLYqWR5vqpzs0okNyUzJkgk-OA8exYc7BBLop-mwE9YZ8g510Q6dcXkTMefY0h-aDEyUEDLS5oQ_ejF2zvIU49u-sx6avGGA"/>
+</div>
+</div>
+<div class="order-1 md:order-2">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6">Built for the Modern Job Seeker</h2>
+<div class="space-y-8">
+<div class="flex gap-4">
+<div class="shrink-0 w-12 h-12 rounded-full border border-primary/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">verified</span>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-on-surface mb-1">Keyword Optimization</h4>
+<p class="text-on-surface-variant">Identify and integrate the high-value keywords that trigger ATS filters in your target industry.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="shrink-0 w-12 h-12 rounded-full border border-primary/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">psychology</span>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-on-surface mb-1">Recruiter Insight</h4>
+<p class="text-on-surface-variant">Understand how human recruiters scan your resume in the first 6 seconds of viewing.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="shrink-0 w-12 h-12 rounded-full border border-primary/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">history_edu</span>
+</div>
+<div>
+<h4 class="font-label-bold text-label-bold text-on-surface mb-1">Formatting Check</h4>
+<p class="text-on-surface-variant">Ensure your layout is machine-readable and professional across all device types and software.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-section-gap px-margin-mobile">
+<div class="max-w-container-max mx-auto glass-card p-12 md:p-20 text-center relative overflow-hidden">
+<div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-primary/20 blur-[100px] rounded-full"></div>
+<div class="relative z-10 max-w-2xl mx-auto">
+<h2 class="font-page-heading text-headline-md md:text-page-heading text-on-surface mb-6">Stop Guessing, Start Getting Hired.</h2>
+<p class="text-body-lg text-on-surface-variant mb-10">Join 150,000+ professionals who have transformed their career search with Syntax Hire AI.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center">
+<button class="bg-primary text-on-primary px-10 py-5 rounded-xl font-label-bold text-label-bold text-xl hover:scale-105 transition-transform">
+                            Analyze My Resume Now
+                        </button>
+</div>
+<p class="mt-6 text-sm text-on-surface-variant opacity-60">No credit card required for your first analysis.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap bg-surface-container-lowest dark:bg-surface-container-lowest border-t border-white/5">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-gutter max-w-container-max mx-auto gap-4">
+<div class="flex flex-col items-center md:items-start gap-2">
+<div class="text-headline-sm font-headline-sm font-bold text-primary">Syntax Hire</div>
+<p class="text-on-surface-variant font-body-md text-body-md opacity-60">© 2024 Syntax Hire AI. Precision in every hire.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md text-body-md" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md text-body-md" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md text-body-md" href="#">Contact Support</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md text-body-md" href="#">API Documentation</a>
+</div>
+</div>
+</footer>
+</body></html>
