@@ -205,7 +205,7 @@ export default function Home() {
         <div className="flex flex-col md:flex-row justify-between items-center px-4 md:px-6 max-w-[1280px] mx-auto gap-4">
           <div className="flex flex-col items-center md:items-start gap-2">
             <div className="text-2xl font-bold" style={{color: "#b6c4ff"}}>Syntax Hire</div>
-            <p className="text-sm" style={{color: "#c5c5d3", opacity: 0.6}}>© 2025 Syntax Hire AI. Precision in every hire.</p>
+            <p className="text-sm" style={{color: "#c5c5d3", opacity: 0.6}}>© {new Date().getFullYear()} Syntax Hire AI. Precision in every hire.</p>
           </div>
           <div className="flex flex-wrap justify-center gap-8">
             <a className="text-sm transition-colors hover:text-secondary" style={{color: "#c5c5d3"}} href="/privacy">Privacy Policy</a>
