@@ -10,13 +10,18 @@ export const meta = () => ([
 const Login = () => {
     const { isLoading, auth } = usePuterStore();
     const location = useLocation();
-    const next = location.search.split('next=')[1] || '/';
+    const params = new URLSearchParams(location.search);
+    const requestedNext = params.get("next");
+    const next =
+        requestedNext && requestedNext.startsWith("/") && !requestedNext.startsWith("//")
+            ? requestedNext
+            : "/";
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
 
     useEffect(() => {
-        if (auth.isAuthenticated) navigate(next);
-    }, [auth.isAuthenticated, next]);
+        if (auth.isAuthenticated) navigate(next, { replace: true });
+    }, [auth.isAuthenticated, next, navigate]);
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
