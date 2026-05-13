@@ -208,9 +208,9 @@ export default function Home() {
             <p className="text-sm" style={{color: "#c5c5d3", opacity: 0.6}}>© 2025 Syntax Hire AI. Precision in every hire.</p>
           </div>
           <div className="flex flex-wrap justify-center gap-8">
-            <a className="text-sm transition-colors hover:text-secondary" style={{color: "#c5c5d3"}} href="#">Privacy Policy</a>
-            <a className="text-sm transition-colors hover:text-secondary" style={{color: "#c5c5d3"}} href="#">Terms of Service</a>
-            <a className="text-sm transition-colors hover:text-secondary" style={{color: "#c5c5d3"}} href="#">Contact Support</a>
+            <a className="text-sm transition-colors hover:text-secondary" style={{color: "#c5c5d3"}} href="/privacy">Privacy Policy</a>
+            <a className="text-sm transition-colors hover:text-secondary" style={{color: "#c5c5d3"}} href="/terms">Terms of Service</a>
+            <a className="text-sm transition-colors hover:text-secondary" style={{color: "#c5c5d3"}} href="/support">Contact Support</a>
           </div>
         </div>
       </footer>
